@@ -3,7 +3,7 @@ import PixabayContext from "../context/PixabayContext";
 
 const Images = () => {
   const { imgData } = useContext(PixabayContext);
-  console.log("the imgdata is: " + imgData);
+  // console.log("the imgdata is: " + imgData);
   return (
     <div className="container my-5">
       <div className="flex">
