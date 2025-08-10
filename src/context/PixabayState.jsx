@@ -16,8 +16,18 @@ const PixabayState = (props) => {
     fetchDataFromApi();
   }, []);
 
+  const fetchImageByCategory = async (cat) => {
+    console.log("cat is: " + cat);
+    const api = await fetch(
+      `https://pixabay.com/api/?key=${api_key}&category=${cat}&image_type=photo&pretty=true&per_page=100`
+    );
+    const data = await api.json();
+    setImgData(data.hits);
+    console.log(data.hits);
+  };
+
   return (
-    <PixabayContext.Provider value={{ imgData }}>
+    <PixabayContext.Provider value={{ imgData, fetchImageByCategory }}>
       {props.children}
     </PixabayContext.Provider>
   );

@@ -5,14 +5,16 @@ const Images = () => {
   const { imgData } = useContext(PixabayContext);
   console.log("the imgdata is: " + imgData);
   return (
-    <div className="flex">
-      {imgData.map((img) => (
-        <div key={img.id}>
-          <div className="img-card">
-            <img src={img.largeImageURL} alt="img" />
+    <div className="container my-5">
+      <div className="flex">
+        {imgData.map((image) => (
+          <div key={image.id}>
+            <div className="item">
+              <img src={image.largeImageURL} alt="altbalaji" />
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };
